@@ -1,0 +1,16 @@
+/* custom.css */
+body {
+    background-color: red; /* Change the background color */
+}
+
+.navbar {
+    background-color: #94ff3c; /* Navbar color */
+}
+
+.nav-link {
+    color: #c06666; /* Navbar link color */
+}
+
+.nav-link:hover {
+    background-color: #1700e2; /* Navbar link hover color */
+}

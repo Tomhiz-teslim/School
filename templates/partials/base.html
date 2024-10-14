@@ -1,0 +1,106 @@
+<!-- /*
+* Template Name: Learner
+* Template Author: Untree.co
+* Tempalte URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="bootstrap, bootstrap4" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Display+Playfair:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/fonts/icomoon/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/fonts/flaticon/font/flaticon.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+  <style>
+    .untree_co-hero {
+        overflow: hidden;
+        max-width: 100%;
+    }
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    .untree_co-section {
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    
+    .owl-carousel .item {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    @media (max-width: 480px){
+        #form{
+            margin-top: 300px;
+           z-index: 20000000;
+        }
+    }
+</style>
+
+  <title>Learner Free Bootstrap Template by Untree.co</title>
+</head>
+
+<body>
+
+  {%  include 'partials/navbar.html' %}
+
+      {% block content%}
+          {% if messages %}
+            <div>
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+          {% endif %}
+  
+
+      {% endblock %}
+
+
+  {% include 'partials/footer.html' %}
+
+    <script src="{% static 'assets/js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'assets/js/aos.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+
+  </body>
+
+  </html>

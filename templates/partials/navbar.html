@@ -1,0 +1,85 @@
+{% load static %}
+<div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+            <span class="icofont-close js-menu-toggle"></span>
+        </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+</div>
+
+<nav class="site-nav mb-5">
+    <div class="pb-2 top-bar mb-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6 col-lg-9">
+                    <a href="#" class="small mr-3">
+                        <span class="icon-question-circle-o mr-2"></span>
+                        <span class="d-none d-lg-inline-block">Have a question?</span>
+                    </a>
+                    <a href="#" class="small mr-3">
+                        <span class="icon-envelope mr-2"></span>
+                        <span class="d-none d-lg-inline-block">{{ user.email }}</span>
+                    </a>
+                </div>
+
+                <div class="col-6 col-lg-3 text-right">
+                    {% if user.is_authenticated %}
+                        <span class="small mr-3" style="color: #adb1b6;">Welcome, {{ user.username }}</span>
+                        <a href="{% url 'logout' %}" class="small">
+                            <span class="icon-unlock"></span>
+                            Log Out
+                        </a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="small mr-3">
+                            <span class="icon-lock"></span>
+                            Log In
+                        </a>
+                        <a href="{% url 'register' %}" class="small">
+                            <span class="icon-person"></span>
+                            Register
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sticky-nav js-sticky-header">
+        <div class="container position-relative">
+            <div class="site-navigation text-center">
+                <a href="{% url 'index' %}" class="logo menu-absolute m-0">Learner<span class="text-primary">.</span></a>
+
+                <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
+                    <li class="{% if request.path == '/' %}active{% endif %}">
+                        <a href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li class="{% if request.path == '/elements/' %}active{% endif %}">
+                        <a href="{% url 'elements' %}">Elements</a>
+                    </li>
+                    <li class="{% if request.path == '/staff/' %}active{% endif %}">
+                        <a href="{% url 'staff' %}">Our Staff</a>
+                    </li>
+                    <li class="{% if request.path == '/news/' %}active{% endif %}">
+                        <a href="{% url 'news' %}">News</a>
+                    </li>
+                    <li class="{% if request.path == '/gallery/' %}active{% endif %}">
+                        <a href="{% url 'gallery' %}">Gallery</a>
+                    </li>
+                    <li class="{% if request.path == '/about/' %}active{% endif %}">
+                        <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="{% if request.path == '/contact_us/' %}active{% endif %}">
+                        <a href="{% url 'contact_us' %}">Contact</a>
+                    </li>
+                </ul>
+
+                <a href="{% url 'admin:index' %}" class="btn-book btn btn-secondary btn-sm menu-absolute">Dash Board</a>
+
+                <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
